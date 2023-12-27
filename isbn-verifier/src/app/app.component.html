@@ -4,31 +4,21 @@
         <div class="isbn-ten-examples">
             <h2>Valid ISBN-10 examples</h2>
             <ul>
-                <li>0-596-52068-9</li>
-                <li>1-55404-295-X</li>
-                <li>1400079276</li>
-                <li>1-56619-909-3</li>
+                <li *ngFor="let isbn of validISBNTens">{{isbn}}</li>
             </ul>
             <h2>Invalid ISBN-10 examples</h2>
             <ul>
-                <li>0-596-52368-9</li>
-                <li>0-429-42089-X</li>
-                <li>1400079272</li>
+                <li *ngFor="let isbn of invalidISBNTens">{{isbn}}</li>
             </ul>
         </div>
         <div class="isbn-thirteen-examples">
             <h2>Valid ISBN-13 examples</h2>
             <ul>
-                <li>978-0-545-01022-1</li>
-                <li>978-1-56619-909-4</li>
-                <li>978-0-14026-690-0</li>
-                <li>9780140266900</li>
+                <li *ngFor="let isbn of validISBNThirteenValues">{{isbn}}</li>
             </ul>
             <h2>Invalid ISBN-13 examples</h2>
             <ul>
-                <li>123-1-56619-909-0</li>
-                <li>978-1-56619-909-X</li>
-                <li>978-1-AD619-909-4</li>
+                <li *ngFor="let isbn of invalidISBNThirteenValues">{{isbn}}</li>
             </ul>
         </div>
     </div>
