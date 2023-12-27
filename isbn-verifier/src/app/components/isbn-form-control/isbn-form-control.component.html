@@ -1,0 +1,9 @@
+<div class="isbn-form-control-container">
+    <mat-form-field>
+        <mat-label>Enter ISBN</mat-label>
+        <input matInput placeholder="978-3-16-148410-0" [formControl]="isbnFormControl" required>
+        <mat-error *ngIf="isbnFormControl.hasError('isbnLength')">Invalid ISBN Length</mat-error>
+        <mat-error *ngIf="isbnFormControl.hasError('isbnFormat')">Invalid ISBN Format</mat-error>
+        <mat-error *ngIf="isbnFormControl.hasError('isbnChecksum')">Invalid ISBN Checksum</mat-error>
+    </mat-form-field>
+</div>
