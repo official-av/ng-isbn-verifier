@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  margin: 2rem;
+  flex-direction: column;
+  max-width: 768px;
+}
+.examples-container {
+  display: flex;
+  width: 100%;
+}
+.examples-container > div {
+  padding: 2rem;
+}
+ul > li {
+  font-size: 20px;
+}

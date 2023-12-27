@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import isbnValidator from 'src/app/isbn.validator';
 
 @Component({
@@ -12,6 +13,7 @@ import isbnValidator from 'src/app/isbn.validator';
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     ReactiveFormsModule,
   ],
   templateUrl: './isbn-form-control.component.html',
@@ -20,8 +22,6 @@ import isbnValidator from 'src/app/isbn.validator';
 export class IsbnFormControlComponent {
   isbnFormControl = new FormControl<string>('', [
     Validators.required,
-    Validators.minLength(13),
-    Validators.maxLength(17),
     isbnValidator,
   ]);
   // TODO: optimise when to call validator

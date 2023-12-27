@@ -1,4 +1,36 @@
-<h1>ISBN Verifier</h1>
-<!-- TODO: add isbn-10 cases -->
-<!-- TODO: add isbn-13 cases -->
-<app-isbn-form-control></app-isbn-form-control>
+<div class="container">
+    <h1>ISBN Verifier</h1>
+    <div class="examples-container">
+        <div class="isbn-ten-examples">
+            <h2>Valid ISBN-10 examples</h2>
+            <ul>
+                <li>0-596-52068-9</li>
+                <li>1-55404-295-X</li>
+                <li>1400079276</li>
+                <li>1-56619-909-3</li>
+            </ul>
+            <h2>Invalid ISBN-10 examples</h2>
+            <ul>
+                <li>0-596-52368-9</li>
+                <li>0-429-42089-X</li>
+                <li>1400079272</li>
+            </ul>
+        </div>
+        <div class="isbn-thirteen-examples">
+            <h2>Valid ISBN-13 examples</h2>
+            <ul>
+                <li>978-0-545-01022-1</li>
+                <li>978-1-56619-909-4</li>
+                <li>978-0-14026-690-0</li>
+                <li>9780140266900</li>
+            </ul>
+            <h2>Invalid ISBN-13 examples</h2>
+            <ul>
+                <li>123-1-56619-909-0</li>
+                <li>978-1-56619-909-X</li>
+                <li>978-1-AD619-909-4</li>
+            </ul>
+        </div>
+    </div>
+    <app-isbn-form-control></app-isbn-form-control>
+</div>

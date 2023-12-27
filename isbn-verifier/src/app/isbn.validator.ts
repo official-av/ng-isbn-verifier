@@ -1,7 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 const ISBN_REGEX = /^(?=(?:[^0-9]*[0-9]){10}(?:(?:[^0-9]*[0-9]){3})?$)[\d-]+$/;
-// TODO: need regex validation ?
 
 const isbnValidator = ({ value }: AbstractControl): ValidationErrors | null => {
   // remove spaces and dashes
@@ -12,11 +11,11 @@ const isbnValidator = ({ value }: AbstractControl): ValidationErrors | null => {
     return { isbnLength: true };
   }
 
-  // test with regex
-  const hasValidFormat = ISBN_REGEX.test(value);
-  if (!hasValidFormat) {
-    return { isbnFormat: true };
-  }
+  // TODO: test with regex
+  // const hasValidFormat = ISBN_REGEX.test(value);
+  // if (!hasValidFormat) {
+  //   return { isbnFormat: true };
+  // }
 
   // verify checksum
   return isISBNChecksumValid(sanitizedValue) ? null : { isbnChecksum: true };
