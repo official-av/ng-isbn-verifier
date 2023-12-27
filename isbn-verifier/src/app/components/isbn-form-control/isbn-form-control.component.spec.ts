@@ -29,7 +29,7 @@ describe('IsbnFormControlComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should test input value gets updated', waitForAsync(async () => {
+  it('should test input value gets updated', waitForAsync(() => {
     isbnInput.value = validISBNTenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -39,7 +39,7 @@ describe('IsbnFormControlComponent', () => {
         expect(component.isbnFormControl.value).toBe(validISBNTenValues[0])
       );
   }));
-  it('should test valid input should have green done icon', waitForAsync(async () => {
+  it('should test valid input should have green done icon', waitForAsync(() => {
     isbnInput.value = validISBNTenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -47,12 +47,11 @@ describe('IsbnFormControlComponent', () => {
       .whenStable()
       .then(() =>
         expect(
-          fixture.debugElement.query(By.css('color-green')).nativeElement
-            .innerText
+          fixture.debugElement.query(By.css('mat-icon')).nativeElement.innerText
         ).toBe('done')
       );
   }));
-  it('should test invalid input should have red close icon', waitForAsync(async () => {
+  it('should test invalid input should have red close icon', waitForAsync(() => {
     isbnInput.value = invalidISBNTenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -60,15 +59,14 @@ describe('IsbnFormControlComponent', () => {
       .whenStable()
       .then(() =>
         expect(
-          fixture.debugElement.query(By.css('color-red')).nativeElement
-            .innerText
-        ).toBe('done')
+          fixture.debugElement.query(By.css('mat-icon')).nativeElement.innerText
+        ).toBe('close')
       );
   }));
   // #endregion
 
   // #region ISBN-10 valid cases
-  it('should test valid ISBN-10 value with dashes and report valid', waitForAsync(async () => {
+  it('should test valid ISBN-10 value with dashes and report valid', waitForAsync(() => {
     isbnInput.value = validISBNTenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -76,15 +74,15 @@ describe('IsbnFormControlComponent', () => {
       .whenStable()
       .then(() => expect(component.isbnFormControl.valid).toBe(true));
   }));
-  it('should test valid ISBN-10 value with dashes and ending in X and report valid', () => {
+  it('should test valid ISBN-10 value with dashes and ending in X and report valid', waitForAsync(() => {
     isbnInput.value = validISBNTenValues[1];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     fixture
       .whenStable()
       .then(() => expect(component.isbnFormControl.valid).toBe(true));
-  });
-  it('should test valid ISBN-10 value without dashes and report valid', waitForAsync(async () => {
+  }));
+  it('should test valid ISBN-10 value without dashes and report valid', waitForAsync(() => {
     isbnInput.value = validISBNTenValues[2];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -95,7 +93,7 @@ describe('IsbnFormControlComponent', () => {
   // #endregion
 
   // #region ISBN-10 invalid cases
-  it('should test invalid ISBN-10 value with invalid length', waitForAsync(async () => {
+  it('should test invalid ISBN-10 value with invalid length', waitForAsync(() => {
     isbnInput.value = invalidISBNTenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -105,7 +103,7 @@ describe('IsbnFormControlComponent', () => {
         expect(component.isbnFormControl.hasError('isbnLength')).toBe(true)
       );
   }));
-  it('should test invalid ISBN-10 value with invalid format', waitForAsync(async () => {
+  it('should test invalid ISBN-10 value with invalid format', waitForAsync(() => {
     isbnInput.value = invalidISBNTenValues[1];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -115,7 +113,7 @@ describe('IsbnFormControlComponent', () => {
         expect(component.isbnFormControl.hasError('isbnFormat')).toBe(true)
       );
   }));
-  it('should test invalid ISBN-10 value with invalid checksum', waitForAsync(async () => {
+  it('should test invalid ISBN-10 value with invalid checksum', waitForAsync(() => {
     isbnInput.value = invalidISBNTenValues[2];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -128,7 +126,7 @@ describe('IsbnFormControlComponent', () => {
   // #endregion
 
   // #region ISBN-13 valid cases
-  it('should test valid ISBN-13 value with dashes and report valid', waitForAsync(async () => {
+  it('should test valid ISBN-13 value with dashes and report valid', waitForAsync(() => {
     isbnInput.value = validISBNThirteenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -136,15 +134,15 @@ describe('IsbnFormControlComponent', () => {
       .whenStable()
       .then(() => expect(component.isbnFormControl.valid).toBe(true));
   }));
-  it('should test valid ISBN-13 value with dashes and ending in X and report valid', () => {
+  it('should test valid ISBN-13 value with dashes and ending in X and report valid', waitForAsync(() => {
     isbnInput.value = validISBNThirteenValues[1];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     fixture
       .whenStable()
       .then(() => expect(component.isbnFormControl.valid).toBe(true));
-  });
-  it('should test valid ISBN-13 value without dashes and report valid', waitForAsync(async () => {
+  }));
+  it('should test valid ISBN-13 value without dashes and report valid', waitForAsync(() => {
     isbnInput.value = validISBNThirteenValues[2];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -155,7 +153,7 @@ describe('IsbnFormControlComponent', () => {
   // #endregion
 
   // #region ISBN-13 invalid cases
-  it('should test invalid ISBN-13 value with invalid length', waitForAsync(async () => {
+  it('should test invalid ISBN-13 value with invalid length', waitForAsync(() => {
     isbnInput.value = invalidISBNThirteenValues[0];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -165,7 +163,7 @@ describe('IsbnFormControlComponent', () => {
         expect(component.isbnFormControl.hasError('isbnLength')).toBe(true)
       );
   }));
-  it('should test invalid ISBN-13 value with invalid format', waitForAsync(async () => {
+  it('should test invalid ISBN-13 value with invalid format', waitForAsync(() => {
     isbnInput.value = invalidISBNThirteenValues[1];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
@@ -175,7 +173,7 @@ describe('IsbnFormControlComponent', () => {
         expect(component.isbnFormControl.hasError('isbnFormat')).toBe(true)
       );
   }));
-  it('should test invalid ISBN-13 value with invalid checksum', waitForAsync(async () => {
+  it('should test invalid ISBN-13 value with invalid checksum', waitForAsync(() => {
     isbnInput.value = invalidISBNThirteenValues[2];
     isbnInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
