@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IsbnFormControlComponent } from './isbn-form-control.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('IsbnFormControlComponent', () => {
   let component: IsbnFormControlComponent;
@@ -8,7 +9,7 @@ describe('IsbnFormControlComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [IsbnFormControlComponent],
+      imports: [IsbnFormControlComponent, BrowserAnimationsModule],
     });
     fixture = TestBed.createComponent(IsbnFormControlComponent);
     component = fixture.componentInstance;
@@ -21,3 +22,4 @@ describe('IsbnFormControlComponent', () => {
 });
 
 // TODO: add unit tests
+// TODO: switch to jest
