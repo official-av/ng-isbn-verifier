@@ -24,4 +24,5 @@ export class IsbnFormControlComponent {
     Validators.maxLength(17),
     isbnValidator,
   ]);
+  // TODO: optimise when to call validator
 }

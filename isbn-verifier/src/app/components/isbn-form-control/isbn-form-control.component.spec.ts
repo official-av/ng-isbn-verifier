@@ -8,7 +8,7 @@ describe('IsbnFormControlComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [IsbnFormControlComponent]
+      imports: [IsbnFormControlComponent],
     });
     fixture = TestBed.createComponent(IsbnFormControlComponent);
     component = fixture.componentInstance;
@@ -19,3 +19,5 @@ describe('IsbnFormControlComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+// TODO: add unit tests
